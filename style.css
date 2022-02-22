@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+}
+
+header, footer{
+    min-height: 10vh;
+    background-color: gold;
+    padding: 1.5em;
+}
+
+main{
+    min-height: 80vh;
+    padding: 2em;
+}
+
+footer{
+    border-top: 1px solid black;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    background-color: white;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    box-shadow: 0 5px 10px #eee;
+}
+
+nav ul{
+    padding-left: 0;
+}
+
+nav ul li{
+    margin: 0;
+    list-style-type: none;
+    display: inline-block;
+}
+
+nav ul li a{
+    transition: background-color 0.3s;
+    border-right: 1px solid black;
+    color: black;
+    text-decoration: none;
+    padding: 1em 0.5em;
+}
+
+nav ul li a:hover{
+    background-color: goldenrod;
+    text-decoration: none;
+}
+
+button a{
+    color: white;
+    text-decoration: none;
+}
+
+button, input[type="submit"]{
+    transition: background-color 0.3s;
+    border: none;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 1.5em 2.5em;
+    background-color: mediumseagreen;
+}
+
+button:hover, input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: goldenrod;
+}
+/* ankieta */
+
+.questionDiv{
+    border: 2px solid black;
+    padding: 1em;
+    margin: 1em auto;
+    max-width: 800px;
+}
+
+.question{
+    font-weight: bold;    
+}
+
+
+canvas{
+    border: 2px solid black;
+}
+
+/* logowanie/rejestracja */
+form{
+    border: 3px solid black;
+    padding: 1em;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.inside-form{
+    margin: 0 auto;
+    width: 80%;
+}
+
+
+input[type=text], input[type=email], input[type=password] {
+    border: 2px solid black;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+}
+
+input[type=text]:focus, input[type=email]:focus {
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+input[type=submit]{
+    margin: 3em auto;
+}
+
+label{
+    display: inline-block;
+    margin: 30px 0 10px 0;
+}
+
+/* tabelka */
+
+
+table, tr, td, th{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+table{
+    width: 70%;
+    margin: 2em auto;
+    box-shadow: 2px 2px 5px #777;
+}
+
+td{
+    padding: 15px 30px;
+}
+
+th{
+    padding: 20px 50px;
+    text-align: center;
+    background-color: lightgreen;
+    font-weight: bold;
+}

@@ -1,0 +1,15 @@
+extends layout.pug
+
+block header
+    h1 Zaloguj się
+
+block content
+
+    form(method="POST" onsubmit="loginHandler(event)")
+        .inside-form
+            label(for="username") Login: <br/>
+            <input type="text" name="username" id="username" /><br/>
+            label(for="password") Hasło: <br/>
+            <input type="password" name="password" id="password" /><br/>
+            <input type="submit" value="Zaloguj się" />
+    p#status

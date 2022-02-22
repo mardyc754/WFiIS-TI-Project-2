@@ -1,0 +1,40 @@
+doctype html
+html(lang="pl")
+    head
+        meta(charset="UTF-8")
+        link(href="https://fonts.googleapis.com/css?family=Raleway", rel="stylesheet")
+        link(rel="stylesheet", type="text/css", href="/style.css")
+        title Projekt 2
+        block css
+
+        script(src="/offline.js") 
+        script(src="/fetch.js") 
+        script(src="/analysys.js")    
+        block js
+
+    body
+        header
+            block header
+
+        nav
+            ul
+                unless subsite === 'survey'
+                    li 
+                        a(href="/survey") Wypełnij ankietę
+                unless subsite === 'results'
+                    li 
+                        a(href="/results") Zobacz wyniki
+                unless sessionType === 'online'
+                    li 
+                        a(href="/login") Zaloguj się
+                    li
+                        a(href="/register") Zarejestruj się 
+                else 
+                    li
+                        a(href="/logout") Wyloguj się
+
+        main
+            block content
+        
+        footer
+            p &copy; 2022 Marta Dychała

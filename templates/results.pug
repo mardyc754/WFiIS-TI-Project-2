@@ -1,0 +1,62 @@
+extends layout.pug
+
+block header 
+    h1 Wyniki ankiety 
+
+block content
+    - var sessionType = locals.sessionType
+
+    #buttonArea
+        <button onclick="displayUserResults('#{sessionType}')">Wyświetl swoje wyniki</button>
+        <button onclick="visualizeResults('#{sessionType}')">Wizualizacja wyników</button>
+
+
+        if sessionType === 'online'
+            <button onclick="displayAllResults('#{sessionType}')">Wyświetl wszystkie wyniki</button>
+
+    #userResults(style="display:none") 
+        table 
+            thead 
+                tr
+                    th Data 
+                    th Pytanie 1
+                    th Pytanie 2
+                    th Pytanie 3
+                    th Pytanie 4 
+            tbody#tableRowsUser
+
+    #allResults(style="display:none") 
+        table 
+            thead 
+                tr
+                    th Data
+                    th Użytkownik 
+                    th Pytanie 1
+                    th Pytanie 2
+                    th Pytanie 3
+                    th Pytanie 4 
+            tbody#tableRowsAll
+
+    #allResultsAnalysys(style="display:none") 
+        .singleResultContainer
+            h2 Pytanie 1: Jak często w tygodniu wychodzisz na spacer?
+            #howOftenTable
+                canvas(id="howOftenCanvas" width="700" height="275")
+
+        .singleResultContainer
+            h2 Pytanie 2: Ile godzin dziennie poświęcasz na spacer?
+            #hoursTable
+                canvas(id="hoursCanvas" width="700" height="275")
+
+        .singleResultContainer
+            h2 Pytanie 3: W jaką pogodę najczęściej wychodzisz na spacer?
+            #weatherTable
+                canvas(id="weatherCanvas" width="700" height="275")
+
+        .singleResultContainer
+            h2 Pytanie 4: Gdzie najczęściej chodzisz na spacery?
+            #placeTable
+                canvas(id="placeCanvas" width="700" height="275")
+
+    button
+        a(href="/") Powrót do menu głównego

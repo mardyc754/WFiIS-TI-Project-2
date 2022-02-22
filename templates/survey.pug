@@ -1,0 +1,48 @@
+extends layout.pug 
+
+block header 
+    h1 Wypełnij Ankietę
+
+block content
+    if sessionType === 'online'
+        <form name="survey" onsubmit="dataHandler(event, 'online')" method="POST">
+    else
+        <form name="survey" onsubmit="dataHandler(event, 'offline')" method="POST">
+
+    unless sessionType === 'online'
+        p(style="text-align: center") Jesteś offline, dlatego wyniki będą zapisywane w lokalnej bazie danych
+
+    div.questionDiv
+        p.question Jak często w tygodniu wychodzisz na spacer?
+        <input type="radio" name="howOften" value="everyday" checked/>Codziennie<br/>
+        <input type="radio" name="howOften" value="fourSixTimes"/>4-6 razy w tygodniu<br/>
+        <input type="radio" name="howOften" value="twiceThreeTimes"/>2-3 razy w tygodniu<br/>
+        <input type="radio" name="howOften" value="once"/>Raz w tygodniu<br/>
+        <input type="radio" name="howOften" value="zeroTimes"/>Nie wychodzę na spacer<br/>
+
+    div.questionDiv
+        p.question Ile godzin dziennie poświęcasz na spacer?
+        <input type="radio" name="hours" value="moreThanFiveHours" checked/>Więcej niż 5 godzin<br/>
+        <input type="radio" name="hours" value="threeFourHours"/>3-4 godziny<br/>
+        <input type="radio" name="hours" value="twoHours"/>2 godziny<br/>
+        <input type="radio" name="hours" value="hour"/>Godzinę<br/>
+        <input type="radio" name="hours" value="lessThanHour"/>Mniej niż godzinę<br/>
+
+    div.questionDiv
+        p.question W jaką pogodę najczęściej wychodzisz na spacer?
+        <input type="radio" name="weather" value="sunny" checked/>Słoneczną<br/>
+        <input type="radio" name="weather" value="cloudy"/>Pochmurną (ale nie deszczową)<br/>
+        <input type="radio" name="weather" value="rainy"/>Deszczową<br/>
+        <input type="radio" name="weather" value="windy"/>Wietrzną<br/>
+        <input type="radio" name="weather" value="other"/>Inną<br/>
+
+    div.questionDiv
+        p.question Gdzie najczęściej chodzisz na spacer?
+        <input type="radio" name="place" value="forest" checked/>Do lasu<br/>
+        <input type="radio" name="place" value="city"/>Na miasto<br/>
+        <input type="radio" name="place" value="beach"/>Na plażę<br/>
+        <input type="radio" name="place" value="hills"/>W góry<br/>
+        <input type="radio" name="place" value="otherPlace"/>Gdzie indziej<br/>
+        
+    <input type="submit" value="Wyślij wyniki" />
+    </form>
