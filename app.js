@@ -31,16 +31,16 @@ app.get('/style.css', function(req,res) {
     res.sendFile(__dirname + '/style.css');
 })
 
-app.get('/fetch.js', function(req,res) {
-    res.sendFile(__dirname + '/fetch.js');
+app.get('/js/fetch.js', function(req,res) {
+    res.sendFile(__dirname + '/js/fetch.js');
 })
 
-app.get('/offline.js', function(req,res) {
-    res.sendFile(__dirname + '/offline.js');
+app.get('/js/offline.js', function(req,res) {
+    res.sendFile(__dirname + '/js/offline.js');
 })
 
-app.get('/analysys.js', function(req,res) {
-    res.sendFile(__dirname + '/analysys.js');
+app.get('/js/analysys.js', function(req,res) {
+    res.sendFile(__dirname + '/js/analysys.js');
 })
 
 app.get('/', function(req,res) {
